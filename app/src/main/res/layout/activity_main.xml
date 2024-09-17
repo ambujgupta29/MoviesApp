@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- RecyclerView fills the remaining space above the button -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/search_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Search"
+            android:inputType="text"
+            android:padding="12dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/filter_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="filter_icon_description"
+            android:padding="12dp"
+            android:src="@drawable/ic_filter_list" />
+
+    </LinearLayout>
+    <!-- RecyclerView fills the remaining space between search bar and button -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/button"
+        android:layout_below="@id/search_row"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button at the bottom of the screen -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+
+        android:textSize="16sp" />
+
+</RelativeLayout>
